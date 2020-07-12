@@ -41,15 +41,11 @@ public class TreeNode{
 1、字母异位词以及分组
 2、两数之和
 ## HashMap小总结
+【它是什么｜逻辑上是怎么设计的｜物理上究竟又是如何存储的｜它能干什么】
 1、是基于哈希表实现的一个键值对的集合数据类型。
 2、底层是数组+链表+红黑树(jdk1.8引入)，Node<K,V>[] table
 3、核心put()方法，涉及到hash()、resize()、treeifyBin()等操作
 4、非线程安全类，多个线程操作可能会出现线程安全的问题
-### HashMap简介和类关系
-HashMap是基于哈希表实现的一个键值对的数据集合类型。
-继承了AbstractMap抽象类，实现了Map、Cloneable、Serializable接口。
-HashMap的底层实现jdk1.7以前单纯是是数组+链表，jdk1.8之后引入了红黑树；
-数组是主干，链表/红黑树是为了解决哈希冲突而存在的。
 ### HashMap的成员变量
 static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; //默认初识容量 1 << 4 ，也就是16，必须是2的整数次方。
 static final int MAXIMUM_CAPACITY = 1 << 30; //最大容量， 2^ 30 次方。
@@ -122,12 +118,7 @@ put()插入数据的方法逻辑以及涉及到的一些重要方法
  putTreeVal():插入红黑树的节点
  treeifyBin():树形化容器
 
-### HashMap的一些总结
-1、代码好复杂和精妙
-2、非线程安全类，多个线程操作可能会出现线程安全的问题
-3、搞清楚HashMap，首先需要知道HashMap是什么，即它的存储结构-字段；(数据底层具体存储的是什么？这样的存储方式有什么优点呢？)
-   其次弄明白它能干什么，即它的功能实现-方法。
-资料：https://blog.csdn.net/qq_40574571/article/details/97612100?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-2
+todo: 插入红黑树的节点和树形化容器的代码没有深究
 
 ## 上一节中的PriorityQueue优先队列源码解析
 【它是什么｜数据底层具体存储的是什么｜它能干什么】
